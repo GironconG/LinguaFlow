@@ -55,7 +55,7 @@ const screens = {
 };
 
 const nav = {
-    points: document.querySelector('.points-badge')
+    points: document.querySelector('.stars')
 };
 
 // Initialize Gallery with Lock Logic
@@ -173,9 +173,14 @@ function finishLesson() {
             <h1 class="item-icon">✨</h1>
             <h2 class="gradient-text">¡Módulo Completado!</h2>
             <p>Has ganado puntos para desbloquear la siguiente pieza de tu vitrina.</p>
-            <button class="btn-primary" onclick="switchScreen('onboarding')">Volver a la Vitrina</button>
+            <button id="back-to-vitrina" class="btn-primary">Volver a la Vitrina</button>
         </div>
     `;
+    
+    document.getElementById('back-to-vitrina').onclick = () => {
+        switchScreen('onboarding');
+    };
+    
     updateStats();
 }
 
